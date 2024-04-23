@@ -6,4 +6,5 @@
     <color name="second_fade_pall">#FFD371</color>
     <color name="third_fade_pall">#C2FFD9</color>
     <color name="fourth_fade_pall">#AEE6FE</color>
+    <color name="ButtonColor">#99B898</color>
 </resources>

@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Base.Theme.KonigGuide" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.KonigGuide" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:statusBarColor">#FF4848</item>
     </style>
 </resources>
