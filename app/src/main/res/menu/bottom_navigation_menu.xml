@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/translator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Translator"
+        android:icon="@drawable/translator_base"/>
+    <item
+        android:id="@+id/weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Weather"
+        android:icon="@drawable/weather_base" />
+    <item
+        android:id="@+id/map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Map"
+        android:icon="@drawable/map_base"/>
+    <item
+        android:id="@+id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Profile"
+        android:icon="@drawable/profile_base"/>
+</menu>

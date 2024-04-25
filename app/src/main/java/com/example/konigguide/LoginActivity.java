@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
         Button NextLogin = findViewById(R.id.NextLogin);
 
         Intent intent = new Intent(this,RegisterActivity.class);
-        Intent intent1 = new Intent(this,MainActivity1.class);
+        Intent intent1 = new Intent(this, MainActivity.class);
 
         GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM,
                 new int[]{ContextCompat.getColor(this, R.color.first_fade_pall),

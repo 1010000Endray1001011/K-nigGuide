@@ -18,7 +18,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         Button Nextreg = findViewById(R.id.NextRegister);
 
-        Intent intent = new Intent(this,MainActivity1.class);
+        Intent intent = new Intent(this, MainActivity.class);
 
 
         GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM,

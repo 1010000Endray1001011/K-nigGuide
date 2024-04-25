@@ -70,7 +70,7 @@
         android:layout_height="65dp"
         android:background="@drawable/app_button_style"
         android:fontFamily="@font/cygre"
-        android:gravity="top|center"
+        android:gravity="bottom|center"
         android:text="Далее"
         android:textAllCaps="false"
         android:textColor="@color/white"

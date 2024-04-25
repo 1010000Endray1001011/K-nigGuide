@@ -2,9 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="ButtonColor">#99B898</color>
+
     <color name="first_fade_pall">#FF4848</color>
     <color name="second_fade_pall">#FFD371</color>
     <color name="third_fade_pall">#C2FFD9</color>
     <color name="fourth_fade_pall">#AEE6FE</color>
-    <color name="ButtonColor">#99B898</color>
+
+    <color name="FourthTabColor">#6E5A8F66</color>
+    <color name="ThirdTabColor">#6E5A7F8F</color>
+    <color name="SecondTabColor">#6E5A5F8F</color>
+    <color name="FirstTabColor">#6E885A8F</color>
+
 </resources>
