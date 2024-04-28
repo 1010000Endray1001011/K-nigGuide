@@ -2,4 +2,5 @@
     <style name="Theme.KonigGuide" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:statusBarColor">#FF4848</item>
     </style>
+
 </resources>

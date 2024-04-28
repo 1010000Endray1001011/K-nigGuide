@@ -8,7 +8,10 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class SplashActivity extends AppCompatActivity {
+     private static  byte USER_AUTH = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +28,13 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
+                if(FirebaseAuth.getInstance().getCurrentUser()==null){
+                    startActivity(new Intent(SplashActivity.this,LoginActivity.class));
+                    finish();
+                }else {
+                    startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                    finish();
+                }
             }
         },3500);
     }

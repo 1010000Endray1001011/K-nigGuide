@@ -15,17 +15,20 @@
         android:id="@+id/NextRegister"
         android:layout_width="200dp"
         android:layout_height="65dp"
-        android:background="@drawable/app_button_style"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/ButtonColor"
         android:fontFamily="@font/cygre"
         android:gravity="bottom|center"
         android:text="Погнали!"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="34dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/Textbox"
+        app:strokeColor="#000000"
+        app:strokeWidth="2dp" />
 
 
     <RelativeLayout
@@ -47,52 +50,155 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Textbox"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_marginBottom="190dp"
+        android:layout_height="340dp"
+        android:layout_marginBottom="150dp"
         app:layout_constraintBottom_toBottomOf="@+id/backgroundRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ShapkaRegister">
 
-        <EditText
-            android:id="@+id/editLogin_reg"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/editEmail_reg"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_input_layout_reg"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
             android:layout_marginTop="15dp"
-            android:ems="10"
-            android:fontFamily="@font/cygre"
-            android:hint="Логин"
-            android:inputType="text"
-            android:textColorHint="#484848" />
-
-        <EditText
-            android:id="@+id/editPassword_reg"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_below="@+id/editLogin_reg"
-            android:layout_marginTop="15dp"
-            android:ems="10"
-            android:fontFamily="@font/cygre"
             android:hint="Пароль"
-            android:inputType="textPassword"
-            android:textColorHint="#484848" />
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="3dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/black"
+            app:hintTextColor="#484848"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email_input_layout_reg"
+            app:startIconContentDescription="Password Icon"
+            app:startIconDrawable="@drawable/password_icon"
+            app:startIconTint="@color/black">
 
-        <EditText
-            android:id="@+id/editEmail_reg"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordEditTextreg"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="@font/cygre"
+                android:inputType="textPassword"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_input_layout_reg"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="350dp"
+            android:layout_height="70dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="0dp"
-            android:ems="10"
-            android:fontFamily="@font/cygre"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:hint="Логин"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="3dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/black"
+            app:hintTextColor="#484848"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconContentDescription="Username Icon"
+            app:startIconDrawable="@drawable/account_icon"
+            app:startIconTint="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/loginEditTextreg"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="@font/cygre"
+                android:inputType="textPersonName"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:textColor="@color/black"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_input_layout_reg"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
             android:hint="Почта"
-            android:inputType="textEmailAddress"
-            android:textColorHint="#484848" />
-    </RelativeLayout>
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="3dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/black"
+            app:hintTextColor="#484848"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_input_layout_reg"
+            app:startIconContentDescription="Username Icon"
+            app:startIconDrawable="@drawable/email_icon"
+            app:startIconTint="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailEditTextreg"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="@font/cygre"
+                android:inputType="textEmailAddress"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:textColor="@color/black"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/retry_password_input_layout_reg"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="15dp"
+            android:hint="Повторите пароль"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="3dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/black"
+            app:hintTextColor="#484848"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password_input_layout_reg"
+            app:startIconContentDescription="Password Icon"
+            app:startIconDrawable="@drawable/password_icon"
+            app:startIconTint="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/retry_passwordEditTextreg"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="@font/cygre"
+                android:inputType="textPassword"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

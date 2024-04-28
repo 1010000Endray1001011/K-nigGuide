@@ -1,6 +1,7 @@
 package com.example.konigguide;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -21,6 +22,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.konigguide.databinding.ActivityMainBinding;
 import com.example.konigguide.R.*;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new TranslatorFragment());
+
 
 
         binding.bottomNavView.setOnItemSelectedListener(item -> {
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
+
 
         GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM,
                 new int[]{ContextCompat.getColor(this, R.color.first_fade_pall),

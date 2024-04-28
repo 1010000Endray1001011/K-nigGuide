@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "870740331612",
+    "project_id": "konigguide-f057f",
+    "storage_bucket": "konigguide-f057f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870740331612:android:14dad9fef092219b4daa99",
+        "android_client_info": {
+          "package_name": "com.example.konigguide"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv2TR2r57RIGL71-SN-i4ZwJXwIXrS7yk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

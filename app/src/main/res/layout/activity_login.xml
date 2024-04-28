@@ -11,7 +11,9 @@
     <View
         android:id="@+id/backgroundLogin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="350dp" />
 
     <RelativeLayout
         android:id="@+id/BottomTextLayout"
@@ -68,60 +70,113 @@
         android:id="@+id/NextLogin"
         android:layout_width="200dp"
         android:layout_height="65dp"
-        android:background="@drawable/app_button_style"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/ButtonColor"
         android:fontFamily="@font/cygre"
         android:gravity="bottom|center"
         android:text="Далее"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="34dp"
-        app:layout_constraintBottom_toTopOf="@+id/BottomTextLayout"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/TextLayout"
+        app:strokeColor="#000000"
+        app:strokeWidth="2dp" />
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/TextLayout"
-        android:layout_width="300dp"
-        android:layout_height="130dp"
-        android:layout_marginBottom="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="100dp"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/MainTextLayout">
 
-        <EditText
-            android:id="@+id/editLogin_log"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/editPassword_log"
-            android:layout_marginBottom="10dp"
-            android:ems="10"
-            android:fontFamily="@font/cygre"
-            android:hint="Логин"
-            android:inputType="text"
-            android:textColorHint="#484848"
-            tools:layout_editor_absoluteX="127dp"
-            tools:layout_editor_absoluteY="106dp" />
 
-        <EditText
-            android:id="@+id/editPassword_log"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="350dp"
+            android:layout_height="70dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:ems="10"
-            android:fontFamily="@font/cygre"
+            android:layout_marginTop="45dp"
             android:hint="Пароль"
-            android:inputType="textPassword"
-            android:textColorHint="#484848"
-            tools:layout_editor_absoluteX="126dp"
-            tools:layout_editor_absoluteY="166dp" />
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:hintTextColor="#484848"
+            app:endIconTint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="3dp"
+            app:endIconMode="password_toggle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/email_input_layout"
+            app:startIconContentDescription="Password Icon"
+            app:startIconDrawable="@drawable/password_icon"
+            app:startIconTint="@color/black">
 
-    </RelativeLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="@font/cygre"
+                android:inputType="textPassword"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="100dp"
+            android:gravity="center"
+            android:hint="Почта"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="3dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/black"
+            app:hintTextColor="#484848"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconContentDescription="Username Icon"
+            app:startIconDrawable="@drawable/email_icon"
+            app:startIconTint="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="@font/cygre"
+                android:id="@+id/emailEditText"
+                android:inputType="textEmailAddress"
+                android:paddingStart="40dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingEnd="40dp"
+                android:textColor="@color/black"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <RelativeLayout
         android:id="@+id/MainTextLayout"
