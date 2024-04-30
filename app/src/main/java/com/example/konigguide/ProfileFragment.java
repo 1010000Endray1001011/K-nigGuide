@@ -39,9 +39,6 @@ public class ProfileFragment extends Fragment {
                          dialog.show();
                      }
                  });
-
-
-
          return rootView ;
     }
 

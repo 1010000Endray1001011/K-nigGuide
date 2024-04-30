@@ -30,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
     String emailPattetn = "^[a-zA-Z0-9._-]+@mail\\.ru$";
     String usernamePattetn = "^[a-zA-Z0-9]+$";
     FirebaseAuth mAuth;
+    FirebaseDatabase FD = FirebaseDatabase.getInstance("https://konigguide-f057f-default-rtdb.europe-west1.firebasedatabase.app/");
     FirebaseUser mUser;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
         mUser = mAuth.getCurrentUser();
 
         Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
 
         passwordT.addTextChangedListener(new TextWatcher() {
             @Override
@@ -130,13 +132,20 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 HashMap<String,String> userInfo = new HashMap<>();
-                                userInfo.put("email",email);
                                 userInfo.put("username",login);
-                                FirebaseDatabase.getInstance().getReference().child("Users").child(mUser.getUid()).setValue(userInfo);
-                                startActivity(new Intent(RegisterActivity.this,MainActivity.class));
-                                finish();
+                                userInfo.put("email",email);
+                                userInfo.put("password",password);
+                                FD.getReference().child("Users").child(mAuth.getCurrentUser().getUid()).setValue(userInfo);
+                                startActivity(intent);
+                                finishAffinity();
                             }else{
-                                Toast.makeText(getApplicationContext(),task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                                String error = task.getException().getMessage();
+                                if (error != null&&error.contains("The email address is already in use by another account.")) {
+                                    Toast.makeText(getApplicationContext(),"Почта уже занята!",Toast.LENGTH_SHORT).show();
+                                    return;
+                                }else {
+                                    Toast.makeText(getApplicationContext(),error,Toast.LENGTH_SHORT).show();
+                                }
                             }
                         }
                     });

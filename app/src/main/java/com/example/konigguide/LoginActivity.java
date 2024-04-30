@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String email = emailEditText.getText().toString().trim();
-                String password = emailEditText.getText().toString().trim();
+                String password = passwordEditText.getText().toString().trim();
                 if (TextUtils.isEmpty(email)){
                     emailEditText.setError("Введите эл.почту!");
                     passwordEditText.setError("Введите пароль!");
@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(getApplicationContext(),"Успешный успех",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),"Успешно",Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(LoginActivity.this,MainActivity.class));
                                 finish();
                             } else {
