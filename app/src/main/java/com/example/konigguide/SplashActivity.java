@@ -4,14 +4,21 @@ import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SplashActivity extends AppCompatActivity {
-     private static  byte USER_AUTH = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +30,6 @@ public class SplashActivity extends AppCompatActivity {
                         ContextCompat.getColor(this, R.color.third_fade_pall),
                         ContextCompat.getColor(this, R.color.fourth_fade_pall)});
         findViewById(R.id.backgroundSplash).setBackground(gradientDrawable);
-
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

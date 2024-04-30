@@ -9,17 +9,23 @@
     android:background="@drawable/back_tab_third">
 
 
-    <RelativeLayout
+    <androidx.cardview.widget.CardView
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        app:cardCornerRadius="25dp">
 
-    <com.mapbox.maps.MapView
-        android:id="@+id/mapboxMapView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+        <com.mapbox.maps.MapView
+            android:id="@+id/mapboxMapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/FocusLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,4 +35,5 @@
             android:src="@drawable/my_location" />
 
     </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 </FrameLayout>
