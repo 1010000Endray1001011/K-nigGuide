@@ -28,6 +28,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+
         TextInputLayout emailInput = findViewById(R.id.email_input_layout);
         TextInputLayout passwordInput = findViewById(R.id.password_input_layout);
         emailEditText = (TextInputEditText) emailInput.getEditText();
@@ -56,8 +59,8 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 Toast.makeText(getApplicationContext(),"Успешно",Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(LoginActivity.this,MainActivity.class));
-                                finish();
+                                startActivity(intent);
+                                finishAffinity();
                             } else {
                                 String error = task.getException().getMessage();
                                 if (error != null&&error.contains("A network error")) {
