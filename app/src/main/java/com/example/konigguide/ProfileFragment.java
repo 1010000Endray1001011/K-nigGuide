@@ -43,6 +43,7 @@ public class ProfileFragment extends Fragment {
                 Log.w("FirebaseData", "loadData:onCancelled", error.toException());
             }
         });
+
          Dialog dialog = new Dialog(getContext());
 
          Intent p = new Intent(getActivity(),ProfileSettings.class);

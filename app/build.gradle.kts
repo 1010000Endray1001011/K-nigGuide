@@ -53,9 +53,17 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore:24.11.1")
     implementation("com.google.firebase:firebase-analytics:21.6.2")
 
+
+    implementation("com.google.firebase:firebase-core:21.1.1")
+    implementation("com.google.firebase:firebase-ml-natural-language:22.0.1")
+    implementation("com.google.firebase:firebase-ml-natural-language-language-id-model:20.0.8")
+    implementation("com.google.firebase:firebase-ml-natural-language-translate-model:20.0.9")
+
+
     implementation("com.google.android.gms:play-services-maps:18.2.0")
     implementation("com.mapbox.maps:android:11.3.1")
     implementation("androidx.cardview:cardview:1.0.0")
+
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
